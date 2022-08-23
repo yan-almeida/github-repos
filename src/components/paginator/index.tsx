@@ -29,16 +29,16 @@ const PagButton = ({ disabled, active, children, p, onClick }: PropsWithChildren
         bg: "gray.800",
       }}
       color="gray.700"
-      opacity={disabled && 0.6}
-      _hover={!disabled && activeStyle}
-      cursor={disabled && "not-allowed"}
+      opacity={disabled ? 0.6 : undefined}
+      _hover={!disabled ? activeStyle : undefined}
+      cursor={disabled ? "not-allowed" : undefined}
       {...(active && activeStyle)}
       display={
         p &&
-        !active && {
+        !active ? {
           base: "none",
           sm: "block",
-        }
+        } : undefined
       }
       onClick={onClick}
     >
